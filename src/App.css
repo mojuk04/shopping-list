@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Century Gothic";
+}
+header {
+  text-align: center;
+  margin: 0.75rem;
+}
+.list-wrapper {
+  border: 1px solid green;
+  border-radius: 0.75rem;
+  max-width: 75vw;
+  margin: 0.25rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  min-height: 9vh;
+  button {
+    width: 4rem;
+    height: 1.5rem;
+    margin-left: 0.5rem;
+    background: gainsboro;
+    background: none;
+    min-height: 2.5rem;
+    width: 5rem;
+    cursor: pointer;
+  }
+  button:hover {
+    font-size: 1rem;
+  }
+  .done-btn {
+    border: 1px solid green;
+  }
+  .delete-btn {
+    border: 1px solid red;
+  }
+}
+
+.add-items {
+  max-width: 60vw;
+  min-height: 3rem;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  select {
+    min-height: 5vh;
+    width: 10vh;
+  }
+  input {
+    width: 75%;
+    min-height: 5vh;
+    padding: 0.25rem;
+  }
+  button {
+    min-height: 5vh;
+    width: 10vh;
+    border: 1px solid green;
+    background: none;
+  }
+}
