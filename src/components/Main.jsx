@@ -1,13 +1,18 @@
 import Form from "./Form";
 import List from "./List";
-import shoppingList from "../data/data";
-const Main = () => {
+
+const Main = ({ items, addItem, handleDelete, handleDone }) => {
   return (
     <main>
-      <Form />
+      <Form addItem={addItem} items={items} />
       <ul>
-        {shoppingList.map((item) => (
-          <List item={item} key={item.id} />
+        {items.map((item) => (
+          <List
+            item={item}
+            key={item.id}
+            handleDelete={handleDelete}
+            handleDone={handleDone}
+          />
         ))}
       </ul>
     </main>
@@ -15,25 +20,3 @@ const Main = () => {
 };
 
 export default Main;
-// import List from "./List";
-// import Form from "./Form";
-
-// const Main = ({ items, handleAddItems, handleDelete, handleDone }) => {
-//   return (
-//     <main>
-//       <Form handleAddItems={handleAddItems} />
-//       <ul>
-//         {items.map((item) => (
-//           <List
-//             item={item}
-//             key={item.id}
-//             handleDelete={handleDelete}
-//             handleDone={handleDone}
-//           />
-//         ))}
-//       </ul>
-//     </main>
-//   );
-// };
-
-// export default Main;

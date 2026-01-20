@@ -1,63 +1,42 @@
-const Form = () => {
+import { useState } from "react";
+
+const Form = ({ addItem }) => {
+  const [quantity, setQuantity] = useState(1);
+  const [product, setProduct] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (product) {
+      const newTodo = {
+        id: Date.now(),
+        packed: false,
+        product,
+        quantity,
+      };
+      setProduct("");
+      setQuantity(1);
+      addItem(newTodo);
+    }
   };
   return (
-    <form onSubmit={handleSubmit} className="add-items" action="">
-      <select name="" id="">
+    <form className="add-items" onSubmit={handleSubmit}>
+      <select
+        value={quantity}
+        onChange={(e) => setQuantity(Number(e.target.value))}
+      >
         {Array.from({ length: 20 }, (_, i) => (
-          <option key={i + 1}>{i + 1}</option>
+          <option key={i + 1}> {i + 1}</option>
         ))}
       </select>
-      <input type="text" placeholder="Enter Element to Add" />
+      <input
+        type="text"
+        placeholder="Enter an element to add"
+        value={product}
+        onChange={(e) => setProduct(e.target.value)}
+      />
       <button>Add</button>
     </form>
   );
 };
 
-export default Form; // import React from "react";
-
-// const Form = ({ items, handleAddItems }) => {
-//   const [product, setProduct] = React.useState("");
-//   const [quantity, setQuantity] = React.useState(1);
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     if (product) {
-//       const newTodo = {
-//         id: Date.now(),
-//         packed: false,
-//         quantity,
-//         product,
-//       };
-//       console.log(newTodo);
-//       handleAddItems(newTodo);
-//       setProduct("");
-//       setQuantity(1);
-//     }
-//     console.log(items);
-//   };
-//   return (
-//     <form onSubmit={handleSubmit} className="addItems">
-//       <select
-//         value={quantity}
-//         onChange={(e) => setQuantity(Number(e.target.value))}
-//       >
-//         {Array.from({ length: 20 }, (_, i) => (
-//           <option value={i + 1} key={i + 1}>
-//             {i + 1}
-//           </option>
-//         ))}
-//       </select>
-//       <input
-//         type="text"
-//         placeholder="Enter an Item to Add"
-//         value={product}
-//         onChange={(e) => setProduct(e.target.value)}
-//       />
-//       <button>Add</button>
-//     </form>
-//   );
-// };
-
-// export default Form;
+export default Form;

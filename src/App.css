@@ -62,3 +62,7 @@ header {
     background: none;
   }
 }
+
+.packed {
+  text-decoration: line-through;
+}
