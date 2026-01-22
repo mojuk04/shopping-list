@@ -1,14 +1,14 @@
-const List = ({ item, handleDelete, handleDone }) => {
-  const { quantity, product } = item;
+const List = ({ item, deleteItem, done }) => {
+  const { product, quantity, packed } = item;
   return (
     <li className="list-wrapper">
       <span>{quantity}</span>
-      <p className={item.packed ? "packed" : null}>{product}</p>
+      <p className={packed ? "packed" : "unpacked"}>{product}</p>
       <div>
-        <button onClick={() => handleDone(item.id)} className="done-btn">
+        <button onClick={() => done(item.id)} className="done-btn">
           Done
         </button>
-        <button onClick={() => handleDelete(item.id)} className="delete-btn">
+        <button onClick={() => deleteItem(item.id)} className="delete-btn">
           Delete
         </button>
       </div>

@@ -1,18 +1,12 @@
 import Form from "./Form";
 import List from "./List";
-
-const Main = ({ items, addItem, handleDelete, handleDone }) => {
+const Main = ({ items, addItem, deleteItem, done }) => {
   return (
     <main>
-      <Form addItem={addItem} items={items} />
+      <Form items={items} addItem={addItem} />
       <ul>
         {items.map((item) => (
-          <List
-            item={item}
-            key={item.id}
-            handleDelete={handleDelete}
-            handleDone={handleDone}
-          />
+          <List item={item} key={item.id} deleteItem={deleteItem} done={done} />
         ))}
       </ul>
     </main>
