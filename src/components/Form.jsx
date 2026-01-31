@@ -22,10 +22,10 @@ const Form = ({ addItem }) => {
     <form onSubmit={handleSubmit} className="add-items">
       <select
         value={quantity}
-        onChange={(e) => setProduct(Number(e.target.value))}
+        onChange={(e) => setQuantity(Number(e.target.value))}
       >
         {Array.from({ length: 20 }, (_, i) => (
-          <option key={i + 1} value="">
+          <option key={i + 1} value={i + 1}>
             {" "}
             {i + 1}
           </option>
