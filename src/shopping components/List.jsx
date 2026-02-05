@@ -4,7 +4,7 @@ const List = ({ item, deleteItem, done }) => {
     <li className="list-wrapper">
       <span>{quantity}</span>
       <p className={packed ? "packed" : "unpacked"}>{product}</p>
-      <div>
+      <div className="btn-container">
         <button onClick={() => done(item.id)} className="done-btn">
           Done
         </button>

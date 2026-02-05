@@ -37,7 +37,7 @@ const Form = ({ addItem }) => {
         type="text"
         placeholder="Enter an item to add"
       />
-      <button>Add</button>
+      <button>Add Item</button>
     </form>
   );
 };
