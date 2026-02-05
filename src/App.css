@@ -150,7 +150,6 @@ p {
     min-width: 100%;
   }
   .list-wrapper {
-    border: 2px solid green;
     p {
       /* border: 2px solid red; */
       width: 90%;
