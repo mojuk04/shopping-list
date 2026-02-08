@@ -1,0 +1,150 @@
+.shopping-app {
+  min-height: 100vh;
+  background-color: #1b1b1b;
+  padding: 1rem; /* Added padding so content doesn't hit screen edges */
+}
+
+header {
+  text-align: center;
+  padding: 1.5rem 0;
+  color: white;
+}
+
+.add-items {
+  max-width: 800px; /* Limit max width on desktop */
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap; /* Allows items to stack on small screens */
+  gap: 1rem; /* Better than space-evenly for responsiveness */
+  justify-content: center;
+
+  select,
+  input,
+  button {
+    height: 3.5rem; /* Consistent height is better than vh */
+    border-radius: 0.5rem;
+  }
+
+  select {
+    font-weight: bold;
+    flex: 1 1 120px; /* Grow, shrink, and basis */
+    border: 1px solid rgb(231, 231, 231);
+    color: rgb(231, 231, 231);
+    background-color: #1b1b1b;
+    padding: 0 0.5rem;
+  }
+
+  input {
+    flex: 2 1 300px; /* Takes up more space than the select */
+    padding-left: 1rem;
+    border: none;
+    background-color: rgb(231, 231, 231);
+  }
+
+  button {
+    flex: 1 1 120px;
+    border: none;
+    background-color: rgb(10, 168, 81);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.25s;
+  }
+  button:hover {
+    border: 1px solid rgb(10, 168, 81);
+    background: none;
+    color: rgb(10, 168, 81);
+    font-size: 17.5px;
+    font-weight: bold;
+  }
+}
+
+/* list wrapper styles */
+.list-wrapper {
+  border: 1px solid whitesmoke;
+  border-radius: 0.75rem;
+  max-width: 800px; /* Match the add-items width */
+  width: 100%; /* Fallback for mobile */
+  margin: 1.5rem auto;
+  display: flex;
+  flex-wrap: wrap; /* Stacks buttons if the text is too long */
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+  color: white;
+
+  button {
+    flex: 1; /* Pushes buttons to the right */
+    min-width: 150px;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: white;
+    font-size: 0.9rem;
+  }
+}
+.btn-container {
+  display: flex;
+  gap: 0.25rem;
+  .done-btn {
+    border: none;
+    background-color: rgb(10, 168, 81);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.25s;
+  }
+  .done-btn:hover {
+    background: rgb(243, 242, 242);
+    color: rgb(10, 168, 81);
+    font-size: 17.5px;
+    font-weight: bold;
+  }
+
+  .delete-btn {
+    border: none;
+    background-color: rgb(168, 10, 10);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.25s;
+  }
+  .delete-btn:hover {
+    background: rgb(243, 242, 242);
+    color: rgb(168, 10, 10);
+    font-size: 17.5px;
+    font-weight: bold;
+  }
+}
+
+.list-wrapper {
+  display: flex;
+}
+
+.packed {
+  text-decoration: line-through;
+}
+
+/* Specific Mobile Tweak */
+@media (max-width: 480px) {
+  .add-items {
+    flex-direction: column; /* Pure vertical stack for very small phones */
+  }
+
+  .add-items input,
+  .add-items select,
+  .add-items button {
+    width: 100%;
+    flex: none;
+  }
+  .btn-container {
+    min-width: 100%;
+  }
+  .list-wrapper {
+    p {
+      /* border: 2px solid red; */
+      width: 90%;
+    }
+  }
+}

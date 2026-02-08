@@ -1,7 +1,11 @@
 import { useState } from "react";
 import "./App.css";
-import Header from "./shopping components/Header";
-import Main from "./shopping components/Main";
+import "./styles/shopping.css";
+import Header from "./components/shopping-app/Header";
+import Main from "./components/shopping-app/Main";
+import Language from "./components/language-app/Language";
+import "./styles/language.css";
+
 const App = () => {
   const [items, setItems] = useState([]);
   const addItem = (newItem) => setItems((items) => [...items, newItem]);
@@ -18,7 +22,7 @@ const App = () => {
   };
   return (
     <>
-      <section className="shopping-list">
+      <section className="shopping-app">
         <Header />
         <Main
           items={items}
@@ -26,6 +30,9 @@ const App = () => {
           deleteItem={deleteItem}
           done={done}
         />
+      </section>
+      <section className="language-app">
+        <Language />
       </section>
     </>
   );

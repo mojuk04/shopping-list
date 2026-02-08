@@ -1,0 +1,46 @@
+.language-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards-container {
+  background-color: orange;
+  margin: 0 auto;
+  width: 80%;
+  height: fit-content;
+  padding: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-evenly;
+}
+
+.language-card {
+  border: 2px solid peachpuff;
+  background-color: white;
+  border-radius: 10%;
+  width: 12rem;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  img {
+    width: 80px;
+    height: auto;
+  }
+}
+
+.option-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  li {
+    list-style-type: none;
+  }
+}
